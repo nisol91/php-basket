@@ -27,9 +27,10 @@ function getCode($num) {
 //-------------------------
 //genero le percentuali di tiri2
 
-// function generaPerc () {
-//
-// };
+function generaPerc_3 ($perc_2) {
+  $perc_3 = 100 - $perc_2;
+  return $perc_3;
+};
 
 //-----------------------
 //costruisco l intelaiatura del database
@@ -51,8 +52,9 @@ for ($i=0; $i < $n; $i++) {
   $data[$i]['punti'] = rand(0, 60);
   $data[$i]['rimbalzi'] = rand(0, 50);
   $data[$i]['falli'] = rand(0, 20);
-  // $data[$i]['perc2'] = ;
-  // $data[$i]['perc3'] = ;
+  $randomPerc_2 = rand(0, 100);
+  $data[$i]['perc2'] = $randomPerc_2.'%';
+  $data[$i]['perc3'] = generaPerc_3($data[$i]['perc2']).'%';
 
 
 }
