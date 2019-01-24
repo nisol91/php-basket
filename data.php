@@ -25,7 +25,7 @@ function getCode($num) {
 // echo getCode (6);
 
 //-------------------------
-//genero le percentuali di tiri2
+//genero le percentuali di tiri3
 
 function generaPerc_3 ($perc_2) {
   $perc_3 = 100 - $perc_2;
@@ -54,7 +54,7 @@ for ($i=0; $i < $n; $i++) {
   $data[$i]['falli'] = rand(0, 20);
   $randomPerc_2 = rand(0, 100);
   $data[$i]['perc2'] = $randomPerc_2.'%';
-  $data[$i]['perc3'] = generaPerc_3($data[$i]['perc2']).'%';
+  $data[$i]['perc3'] = generaPerc_3($randomPerc_2).'%';
 
 
 }
