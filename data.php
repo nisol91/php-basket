@@ -15,7 +15,7 @@ function getCode($num) {
   $letters = ['a','b','c','d','e','f','g','h','i','l','m','n','o','p','q','r','s','t','u','v','z'];
   for ($i=0; $i < ($num/2); $i++) {
     $lettersLength = count($letters);
-    $pos = $letters[rand(0, $lettersLength)];
+    $pos = $letters[rand(0, $lettersLength -1)];
     $str_2 .= $pos;
     $str_2_up = strtoupper($str_2);
   }
