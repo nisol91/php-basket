@@ -25,7 +25,7 @@ function getCode($num) {
 // echo getCode (6);
 
 //-------------------------
-//genero le percentuali di tiri3
+//genero le percentuali casuali di tiri
 
 function generaPerc_3 ($perc_2) {
   $perc_3 = 100 - $perc_2;
@@ -37,7 +37,9 @@ function generaPerc_3 ($perc_2) {
 function getDatabaseScaffolding ($n) {
 
 $data = [];
-$ogg = [
+
+for ($i=0; $i < $n; $i++) {
+  $ogg = [
     'codice' => '',
     'falli' => '',
     'perc2' => 0,
@@ -45,17 +47,15 @@ $ogg = [
     'punti' => '',
     'rimbalzi' => '',
   ];
-
-for ($i=0; $i < $n; $i++) {
-  $data[] = $ogg;
-  $data[$i]['codice'] = getCode (6);
-  $data[$i]['punti'] = rand(0, 60);
-  $data[$i]['rimbalzi'] = rand(0, 50);
-  $data[$i]['falli'] = rand(0, 20);
+  $ogg['codice'] = getCode (6);
+  $ogg['punti'] = rand(0, 60);
+  $ogg['rimbalzi'] = rand(0, 50);
+  $ogg['falli'] = rand(0, 20);
   $randomPerc_2 = rand(0, 100);
-  $data[$i]['perc2'] = $randomPerc_2.'%';
-  $data[$i]['perc3'] = generaPerc_3($randomPerc_2).'%';
+  $ogg['perc2'] = $randomPerc_2.'%';
+  $ogg['perc3'] = generaPerc_3($randomPerc_2).'%';
 
+  $data[] = $ogg;
 
 }
 return $data;
