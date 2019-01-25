@@ -18,8 +18,13 @@ function getCode($num) {
     $pos = $letters[rand(0, $lettersLength -1)];
     $str_2 .= $pos;
     $str_2_up = strtoupper($str_2);
-  }
-  return $str.$str_2_up;
+  };
+
+
+  $stringaFinale = $str.$str_2_up;
+
+
+  return $stringaFinale;
 };
 
 // echo getCode (6);
@@ -60,8 +65,8 @@ for ($i=0; $i < $n; $i++) {
 }
 return $data;
 };
-
-var_dump(getDatabaseScaffolding (10));
+// $database = getDatabaseScaffolding (10);
+// var_dump(getDatabaseScaffolding (10));
 
 echo json_encode(getDatabaseScaffolding (10));
 
